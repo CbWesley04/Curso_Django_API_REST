@@ -48,6 +48,15 @@ class CursoViewset(viewsets.ModelViewSet):
         serializer = AvaliacaoSerializer(curso.avaliacoes, many=True)
         return Response(serializer.data)
     
+# =========== VIEWSET PADRÃO ===============
+
 class AvaliacaoViewset(viewsets.ModelViewSet):
     queryset = Avaliacao.objects.all()
     serializer_class = AvaliacaoSerializer
+
+
+
+# ========== VIEWSET CUSTOMIZADA ==============
+# class AvaliacaoViewSet(mixins.CreateModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, viewsets.GenericViewSet):
+#     queryset = Avaliacao.objects.all()
+#     serializer_class = AvaliacaoSerializer

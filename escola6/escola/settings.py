@@ -89,7 +89,18 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 2
+    'PAGE_SIZE': 2, 
+
+    'DEFAULLT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle',
+    ),
+
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '2/minute', #Ssecuond, day, month, year
+        'user': '3/minute',
+    }
+
 }
 
 # '        Token 6ed595e9325c6ed2528c02f12a0c281ceb602c89               '

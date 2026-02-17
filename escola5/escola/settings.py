@@ -17,7 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cursos',
     'rest_framework',
-    'rest_framework.authtoken',
+    'rest_framework.authtoken', # Autenticação por token
 ]
 
 MIDDLEWARE = [
@@ -82,7 +82,8 @@ STATIC_URL = 'static/'
 #DRF 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
@@ -90,3 +91,5 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 2
 }
+
+# '7f1fe15f8202cdd7bb2384865981eeeedab84f57'
